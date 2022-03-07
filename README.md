@@ -10,3 +10,5 @@ Jack : reverse order of play
 
 When a player has 2 cards left, they shout "2 cards!".
 When a player only has 1 card left, they must shout "Ticket!". If they do not they are punished by picking up one card from the deck.
+
+Playing cards found at https://github.com/hayeah/playing-cards-assets
