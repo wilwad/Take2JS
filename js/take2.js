@@ -18,6 +18,7 @@ class take2 {
         this.speedPC = 3000
         this.game_is_over = false
         this.deckClickable = null;
+        this.allowHighlightValidCards = false
 
         // preload the sounds. 
         // so then we can play using this.audio.error.play()
@@ -151,9 +152,18 @@ class take2 {
             self.highlightValidCards()
         }, this.speedPC)
         this.dumpStats()
-    };
+    } // constructor
+
+    get highlightOKcards(){
+        return this.allowHighlightValidCards
+    }
+    set highlightOKcards(yesno){
+        this.allowHighlightValidCards = yesno
+    }
 
     highlightValidCards (){
+        if (! this.allowHighlightValidCards) return
+
         // what is the current card
         var c = this.getPropsFromBgImage(this.currentcard.style.backgroundImage);
         var cnum = c.number;
