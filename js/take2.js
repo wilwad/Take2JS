@@ -142,11 +142,13 @@ class take2 {
         this.currentcard = div // current card on deck
 
         // human's turn to play
-<<<<<<< HEAD
-        this.setPlayerTurn(this.characters.Human);
-        var self = this;
-        this.timerId = window.setInterval(() => { self.handlerPlayerPC(); self.highlightValidCards();}, this.speedPC);
-        this.dumpStats();
+        this.setPlayerTurn(this.characters.Human)
+        var self = this
+        this.timerId = window.setInterval(() => { 
+            self.handlerPlayerPC()
+            self.highlightValidCards()
+        }, this.speedPC)
+        this.dumpStats()
     };
 
     highlightValidCards (){
@@ -175,19 +177,6 @@ class take2 {
     randomInt (max) {
         return Math.floor(Math.random() * max);
     };
-=======
-        this.setPlayerTurn( this.characters.Human )
-        var self = this
-        this.timerId = window.setInterval(() => { 
-            self.handlerPlayerPC() 
-        }, this.speedPC)
-        this.dumpStats()
-    }
-
-    randomInt ( max ) {
-        return Math.floor(Math.random() * max)
-    }
->>>>>>> 03192a8da4d56036f109d1c36c50245d66710c29
 
     getRandomCard () {
         var nottaken = this.cards.filter(el => el.taken == false)
@@ -376,13 +365,7 @@ class take2 {
                 div.classList.add('player2')
 
                 // attach click events
-<<<<<<< HEAD
                 div.addEventListener('dblclick', () => this.handlerPlayerHuman(div), false);
-=======
-                div.addEventListener('mousedown', () => div.style.outline = '2px dotted gray', false)
-                div.addEventListener('mouseup', () => div.style.outline = '1px solid gray', false)
-                div.addEventListener('dblclick', () => this.handlerPlayerHuman(div), false)
->>>>>>> 03192a8da4d56036f109d1c36c50245d66710c29
 
                 // human new cards appear on the left
                 this.player2.insertBefore(div, this.player2.firstElementChild)
@@ -548,18 +531,10 @@ class take2 {
             }
         }
 
-<<<<<<< HEAD
-        this.checkTicket();
-        this.checkWinner();
-        this.dumpStats();
-        this.highlightValidCards()
-    };
-=======
         this.checkTicket()
         this.checkWinner()
         this.dumpStats()
     }// handlePlayerPC
->>>>>>> 03192a8da4d56036f109d1c36c50245d66710c29
 
     handlerPlayerHuman(div) {
         if (!this.turn_is_human) {
