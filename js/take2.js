@@ -146,9 +146,32 @@ class take2 {
         // human's turn to play
         this.setPlayerTurn(this.characters.Human);
         var self = this;
-        this.timerId = window.setInterval(() => { self.handlerPlayerPC(); }, this.speedPC);
+        this.timerId = window.setInterval(() => { self.handlerPlayerPC(); self.highlightValidCards();}, this.speedPC);
         this.dumpStats();
     };
+
+    highlightValidCards (){
+        // what is the current card
+        var c = this.getPropsFromBgImage(this.currentcard.style.backgroundImage);
+        var cnum = c.number;
+        var ctype = c.type;
+        
+        // what cards does human have ?
+        var divs = document.querySelectorAll('div#player2 > div')
+
+        for (var idx = 0; idx < divs.length; idx++) {
+            let div = divs[idx];
+            var t = this.getPropsFromBgImage(div.style.backgroundImage);
+            var num1 = t.number;
+            var type1 = t.type;
+
+            if (num1 == cnum || ctype == type1) {
+                div.classList.add('hint')
+            } else {
+                div.classList.remove('hint')
+            }
+        }        
+    }
 
     randomInt (max) {
         return Math.floor(Math.random() * max);
@@ -344,8 +367,6 @@ class take2 {
                 div.classList.add('player2');
 
                 // attach click events
-                div.addEventListener('mousedown', () => div.style.outline = '2px dotted gray', false);
-                div.addEventListener('mouseup', () => div.style.outline = '1px solid gray', false);
                 div.addEventListener('dblclick', () => this.handlerPlayerHuman(div), false);
 
                 // human new cards appear on the left
@@ -513,7 +534,7 @@ class take2 {
         this.checkTicket();
         this.checkWinner();
         this.dumpStats();
-
+        this.highlightValidCards()
     };
 
     handlerPlayerHuman(div) {
