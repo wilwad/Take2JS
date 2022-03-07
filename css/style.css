@@ -46,6 +46,19 @@
 	 animation: blinking 1s infinite;
 }
 
+@keyframes hinting {
+	0% {
+	  background-color: #FFF;
+	}
+	100% {
+	  background-color: #56ff80;
+	}
+}
+
+.hint {
+	 animation: hinting 1s infinite;
+}
+
 .turn {
 	background: #cc0d4c;
 }
@@ -61,7 +74,7 @@
 	background: #80808073;
 }
 body {
- background: url(../textures/table.jpg);
+ background: url(../textures/wood1.webp);
  background-attachment: fixed;
  background-size: contain;
 }
