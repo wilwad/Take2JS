@@ -47,7 +47,7 @@ class take2 {
          * used bash to generate this list
          * for png in *.png; 
          * do 
-         * echo "{image:'$png', taken: false, preload: this.loadImage('$png') },"
+         * echo "{image:'$png', taken: false, preload: this.loadImage('cards/$png') },"
          * done
         */
         this.cards = [
