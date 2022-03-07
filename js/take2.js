@@ -191,6 +191,8 @@ class take2 {
     };
 
     getRandomCard () {
+        if ( !this.cardsAvailable().length ) this.resetDeck()
+        
         return this.cardsAvailable()[this.randomInt(nottaken.length)]
     }
 
