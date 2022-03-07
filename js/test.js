@@ -1,3 +1,4 @@
+/* Testing ES6 class */
 class test {
     constructor(){
         this.arr = [1,2]
