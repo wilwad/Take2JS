@@ -43,6 +43,13 @@ class take2 {
                             [] /*Human cards*/
                         ]
 
+        /** 
+         * used bash to generate this list
+         * for png in *.png; 
+         * do 
+         * echo "{image:'$png', taken: false, preload: this.loadImage('$png') },"
+         * done
+        */
         this.cards = [
             { image: '10_of_clubs.png', taken: false, preload: this.loadImage('cards/10_of_clubs.png') },
             { image: '10_of_diamonds.png', taken: false, preload: this.loadImage('cards/10_of_diamonds.png') },
@@ -192,7 +199,7 @@ class take2 {
 
     getRandomCard () {
         if ( !this.cardsAvailable().length ) this.resetDeck()
-        
+
         return this.cardsAvailable()[this.randomInt(nottaken.length)]
     }
 
