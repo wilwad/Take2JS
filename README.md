@@ -1,4 +1,7 @@
 # Take2JS
+
+![screenshot](https://github.com/wilwad/Take2JS/blob/master/take2.jpg?raw=true)
+
 This is a card game we used to play back in the day. Multiple players. Each player is given an initial amount of cards.
 A random card is placed face up on the table and each player takes a turn putting a card from their cards.
 If the player has no matching card (number, type), they have to pick from the deck.
