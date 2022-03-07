@@ -17,6 +17,7 @@ class take2 {
         this.timerId = 0
         this.speedPC = 3000
         this.game_is_over = false
+        this.deckClickable = null;
 
         // preload the sounds. 
         // so then we can play using this.audio.error.play()
@@ -111,6 +112,7 @@ class take2 {
 
         // the deck-clickable card
         var div = document.createElement('div')
+        this.deckClickable = div
         div.style.background = "url(cards/off/back@2xdeck.png) no-repeat"
         div.style.backgroundSize = 'cover'
         div.classList.add('deck')
@@ -159,6 +161,7 @@ class take2 {
         
         // what cards does human have ?
         var divs = document.querySelectorAll('div#player2 > div')
+        var hinted = false;
 
         for (var idx = 0; idx < divs.length; idx++) {
             let div = divs[idx];
@@ -166,12 +169,19 @@ class take2 {
             var num1 = t.number;
             var type1 = t.type;
 
-            if (num1 == cnum || ctype == type1) {
+            if (num1 == cnum || ctype == type1 || num1 == '8') {
                 div.classList.add('hint')
+                hinted = true
             } else {
                 div.classList.remove('hint')
             }
         }        
+
+        if (!hinted){
+            this.deckClickable.classList.add('hint')
+        } else {
+            this.deckClickable.classList.remove('hint')
+        }
     }
 
     randomInt (max) {
