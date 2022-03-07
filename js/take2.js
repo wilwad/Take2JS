@@ -161,7 +161,6 @@ class take2 {
         
         // what cards does human have ?
         var divs = document.querySelectorAll('div#player2 > div')
-        var hinted = false;
 
         for (var idx = 0; idx < divs.length; idx++) {
             let div = divs[idx];
@@ -171,17 +170,10 @@ class take2 {
 
             if (num1 == cnum || ctype == type1 || num1 == '8') {
                 div.classList.add('hint')
-                hinted = true
             } else {
                 div.classList.remove('hint')
             }
         }        
-
-        if (!hinted){
-            this.deckClickable.classList.add('hint')
-        } else {
-            this.deckClickable.classList.remove('hint')
-        }
     }
 
     randomInt (max) {
