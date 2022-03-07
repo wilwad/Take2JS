@@ -191,8 +191,7 @@ class take2 {
     };
 
     getRandomCard () {
-        var nottaken = this.cards.filter(el => el.taken == false)
-        return nottaken[this.randomInt(nottaken.length)]
+        return this.cardsAvailable()[this.randomInt(nottaken.length)]
     }
 
     queueAudio ( audio ) {
