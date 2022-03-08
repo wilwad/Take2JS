@@ -199,8 +199,8 @@ class take2 {
 
     getRandomCard () {
         if ( !this.cardsAvailable().length ) this.resetDeck()
-
-        return this.cardsAvailable()[this.randomInt(nottaken.length)]
+        var nottaken = this.cardsAvailable()
+        return nottaken[this.randomInt(nottaken.length)]
     }
 
     queueAudio ( audio ) {
