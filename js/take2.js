@@ -186,7 +186,7 @@ class take2 {
             var type1 = t.type;
 
             if (num1 == cnum || ctype == type1 || num1 == '8') {
-                div.classList.add('hint')
+               div.classList.add('hint')
             } else {
                 div.classList.remove('hint')
             }
